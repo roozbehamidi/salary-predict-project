@@ -13,7 +13,7 @@ from utils import encode_country,encode_edlevel,country_list, edlevel_list,colum
 model = joblib.load('gbr_model.joblib')
 
 # ستون‌های ورودی مدل: ویژگی‌های عددی + dummy آدرس‌ها به ترتیب الفبایی
-columns = columns + sorted(country_list)+ sorted(edlevel_list)
+columns = sorted(country_list)+ sorted(edlevel_list)+columns
 
 st.title('Salary Prediction')
 
@@ -64,3 +64,4 @@ def predict(x):
 # -----------------------------
 if st.button("Predict"):
     predict(X)
+
